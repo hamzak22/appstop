@@ -32,12 +32,12 @@ function App() {
       </div>
 
       {/* Logo */}
-      <div className="absolute left-1/2 top-23.5 -translate-x-1/2 z-10">
+      <div className="absolute left-1/2 top-30.5 -translate-x-1/2 z-10">
         <img src={logo} alt="appstop" className="h-auto w-auto" />
       </div>
 
       {/* Main content */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-12 items-center w-214.5 max-w-[90vw]">
+      <div className="absolute left-1/2 top-1/2 mt-20 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-12 items-center w-214.5 max-w-[90vw]">
         {/* Text content */}
         <div className="flex flex-col gap-12.25 items-center w-full">
           <p className="font-semibold text-[20px] text-center text-white tracking-normal leading-normal font-primary" >
