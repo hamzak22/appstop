@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Hikasami';
+  src: url(./assets/fonts/Hikasami-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hikasami';
+  src: url(./assets/fonts/Hikasami-Medium.ttf);
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hikasami';
+  src: url(./assets/fonts/Hikasami-SemiBold.ttf);
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hikasami';
+  src: url(./assets/fonts/Hikasami-Bold.ttf);
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+@theme {
+  --font-sans: 'Hikasami', system-ui, -apple-system, sans-serif;
+  --font-primary: 'Hikasami', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
