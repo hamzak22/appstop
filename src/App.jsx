@@ -88,6 +88,7 @@ function App() {
             speed={60}
             fadeOut
             fadeOutColor="transparent"
+            style={{ '--logoloop-fadeSize': 'clamp(40px,18%,220px)' }}
             ariaLabel="Tech stack logos"
           />
         </div>
