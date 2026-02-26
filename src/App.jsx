@@ -1,6 +1,7 @@
 import './App.css'
 import logo from './assets/logo.svg';
 import LogoLoop from './reactbits/LogoLoop/LogoLoop.jsx';
+import FlowingMenu from './reactbits/FlowingMenu/FlowingMenu.jsx';
 import { FaReact } from 'react-icons/fa6';
 import {
   SiJavascript,
@@ -23,7 +24,9 @@ const techLogos = [
 
 function App() {
   return (
-    <div className="bg-[#050505] relative w-screen h-screen overflow-hidden">
+
+    <>
+    <div className="bg-[#050505] relative w-full min-h-[115vh] overflow-hidden pb-50">
       {/* Background gradient vector */}
       <div className="absolute h-150 left-41 top-[617.69px] w-[1930.891px]">
         <div className="absolute inset-[-56.61%_-16.33%]">
@@ -79,7 +82,7 @@ function App() {
           </span>
         </button>
 
-        <div className="w-screen pt-6 flex justify-center">
+        <div className="w-screen pt-6 flex justify-center mb-40">
           <LogoLoop
             logos={techLogos}
             width="60%"
@@ -94,6 +97,35 @@ function App() {
         </div>
       </div>
     </div>
+
+    {/* Industries Section */}
+    <div className='relative w-full bg-white px-40 py-20 rounded-t-[100px] -mt-24'>
+      <div className='flex justify-center mb-6'>
+        <div className='bg-primary-red/10 rounded-full px-4 py-1.5 border border-primary-red'>
+          <p className='text-center text-sm font-semibold text-primary-red'>Industry Projects</p>
+        </div>
+      </div>
+      <h2 className='text-center text-5xl font-bold mb-1  font-primary'>Proven Success In</h2>
+      <h2 className='text-center text-5xl font-semibold text-primary-red italic font-playfair'>Every Industry</h2>
+      <div className='h-[500px] mt-20'>
+        <FlowingMenu
+          items={[
+            { link: '#', text: 'Healthcare', image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=300' },
+            { link: '#', text: 'Finance', image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=300' },
+            { link: '#', text: 'E-Commerce', image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300' },
+            { link: '#', text: 'Education', image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=300' },
+            { link: '#', text: 'Entertainment', image: 'https://images.unsplash.com/photo-1603190287605-e6ade32fa852?w=300' },
+          ]}
+          textColor="#111"
+          bgColor="#fff"
+          marqueeBgColor="#D52020"
+          marqueeTextColor="#fff"
+          borderColor="#ddd"
+        />
+      </div>
+    </div>
+
+    </>
   )
 }
 

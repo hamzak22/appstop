@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html, body {
+  overflow-x: hidden;
+}
+
 @font-face {
   font-family: 'Hikasami';
   src: url(./assets/fonts/Hikasami-Regular.ttf);
@@ -33,6 +37,8 @@
   --font-sans: 'Hikasami', system-ui, -apple-system, sans-serif;
   --font-primary: 'Hikasami', sans-serif;
   --font-playfair: 'Playfair Display', serif;
+
+  --color-primary-red : #D52020;
 }
 
 @keyframes shine {
