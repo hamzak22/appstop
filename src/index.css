@@ -1,7 +1,17 @@
 @import "tailwindcss";
 
-html, body {
+html {
   overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Prevent GSAP pin-spacer from causing double scrollbars */
+.pin-spacer {
+  overflow: visible !important;
 }
 
 @font-face {
@@ -48,4 +58,38 @@ html, body {
   100% {
     background-position: -200% 0;
   }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes numberPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-numberPop {
+  animation: numberPop 0.5s ease-out forwards;
 }

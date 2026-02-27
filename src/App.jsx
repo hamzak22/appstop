@@ -2,6 +2,10 @@ import './App.css'
 import logo from './assets/logo.svg';
 import LogoLoop from './reactbits/LogoLoop/LogoLoop.jsx';
 import FlowingMenu from './reactbits/FlowingMenu/FlowingMenu.jsx';
+import WhyChooseUs from './reactbits/WhyChooseUs/WhyChooseUs.jsx';
+import Masonry from './reactbits/Masonry.jsx';
+import MagicBento from './reactbits/MagicBento.jsx';
+import TextLoop from './reactbits/TextLoop/TextLoop.jsx';
 import { FaReact } from 'react-icons/fa6';
 import {
   SiJavascript,
@@ -20,6 +24,45 @@ const techLogos = [
   { title: 'JavaScript', node: <SiJavascript className="text-white/80" /> },
   { title: 'Node.js', node: <SiNodedotjs className="text-white/80" /> },
   { title: 'Tailwind CSS', node: <SiTailwindcss className="text-white/80" /> }
+];
+
+const sellingPointsData = [
+  {
+    color: '#0a0a0a',
+    title: 'Unlimited Revisions',
+    description: 'We refine until you\'re 100% satisfied with the result',
+    label: '♾️ Revisions'
+  },
+  {
+    color: '#0a0a0a',
+    title: 'Fast Development',
+    description: 'Quick turnaround times without compromising quality',
+    label: '⚡ Speed'
+  },
+  {
+    color: '#0a0a0a',
+    title: 'Dedicated Support',
+    description: '24/7 support team ready to assist you anytime',
+    label: '🛟 Support'
+  },
+  {
+    color: '#0a0a0a',
+    title: 'Scalable Solutions',
+    description: 'Apps built to grow with your business needs',
+    label: '📈 Growth'
+  },
+  {
+    color: '#0a0a0a',
+    title: 'Modern Tech Stack',
+    description: 'Using the latest technologies for optimal performance',
+    label: '🚀 Technology'
+  },
+  {
+    color: '#0a0a0a',
+    title: 'Transparent Pricing',
+    description: 'No hidden fees, clear and upfront pricing',
+    label: '💰 Pricing'
+  }
 ];
 
 function App() {
@@ -99,7 +142,7 @@ function App() {
     </div>
 
     {/* Industries Section */}
-    <div className='relative w-full bg-white px-40 py-20 rounded-t-[100px] -mt-24'>
+    <div className='relative w-full bg-white px-40 pt-20 rounded-t-[100px] -mt-24'>
       <div className='flex justify-center mb-6'>
         <div className='bg-primary-red/10 rounded-full px-4 py-1.5 border border-primary-red'>
           <p className='text-center text-sm font-semibold text-primary-red'>Industry Projects</p>
@@ -121,6 +164,122 @@ function App() {
           marqueeBgColor="#D52020"
           marqueeTextColor="#fff"
           borderColor="#ddd"
+        />
+      </div>
+    </div>
+
+    {/* Why Choose Us
+    <div>
+      <WhyChooseUs/>
+    </div> */}
+
+    {/* Our Recent Work Section */}
+    <div className='relative min-h-fit w-full bg-[#b52d2d] mt-20 px-6 md:px-20 lg:px-40 py-40 pb-60'>
+      {/* <div className='flex flex-col items-center mb-16'>
+        <div className='bg-primary-red/10 inline-flex w-fit rounded-full px-4 py-1.5 mb-6 border border-primary-red'>
+          <p className='text-center text-sm font-semibold text-primary-red'>Our Recent Work</p>
+        </div>
+        <h2 className='text-center text-5xl font-bold mb-1 text-white font-primary'>We Develop Apps That</h2>
+        <h2 className='text-center text-5xl font-semibold text-white italic font-playfair'>Users Love</h2>
+      </div> */}
+
+      {/* Text Loop - Above Masonry */}
+      <TextLoop
+        items={['Figma', 'Social Media', 'Framer', 'Branding', 'Dashboard', 'Logos', 'Webflow', 'Slide Decks', 'Mobile Apps']}
+        speed={60}
+        direction="left"
+        separator="•"
+        textClassName="text-white text-base font-medium tracking-wide"
+        separatorClassName="text-white mx-2"
+        className="mb-8"
+      />
+
+      <Masonry
+        items={[
+          {
+            id: "1",
+            img: "https://picsum.photos/id/1015/600/900",
+            url: "#",
+            height: 400,
+          },
+          {
+            id: "2",
+            img: "https://picsum.photos/id/1011/600/750",
+            url: "#",
+            height: 250,
+          },
+          {
+            id: "3",
+            img: "https://picsum.photos/id/1020/600/800",
+            url: "#",
+            height: 500,
+          },
+          {
+            id: "4",
+            img: "https://picsum.photos/id/1025/600/700",
+            url: "#",
+            height: 350,
+          },
+          {
+            id: "5",
+            img: "https://picsum.photos/id/1035/600/850",
+            url: "#",
+            height: 450,
+          },
+          {
+            id: "6",
+            img: "https://picsum.photos/id/1040/600/600",
+            url: "#",
+            height: 300,
+          },
+        ]}
+        ease="power3.out"
+        duration={0.6}
+        stagger={0.05}
+        animateFrom="bottom"
+        scaleOnHover
+        hoverScale={0.95}
+        blurToFocus
+        colorShiftOnHover={false}
+      />
+
+      {/* Text Loop - Below Masonry */}
+      <TextLoop
+        items={['UI/UX', 'App Design', 'Web Design', 'Prototyping', 'Wireframes', 'User Research', 'Design Systems', 'Illustrations']}
+        speed={60}
+        direction="right"
+        separator="•"
+        textClassName="text-white text-base font-medium tracking-wide"
+        separatorClassName="text-white mx-2"
+        className="mt-8"
+      />
+    </div>
+
+    {/* Magic Bento Section */}
+    <div className='relative w-full bg-black px-6 md:px-20 lg:px-40 py-20 -mt-20 rounded-t-[50px]'>
+      <div className='flex flex-col items-center mb-12'>
+        <h2 className='text-center text-4xl md:text-5xl font-bold text-white font-primary leading-tight'>
+          We Design for the Future to
+        </h2>
+        <h2 className='text-center text-4xl md:text-5xl font-semibold text-white italic font-playfair'>
+          Drive Today's Success
+        </h2>
+      </div>
+      
+      <div className='flex justify-center'>
+        <MagicBento 
+          textAutoHide={true}
+          enableStars
+          enableSpotlight
+          enableBorderGlow={true}
+          enableTilt={false}
+          enableMagnetism={false}
+          clickEffect
+          spotlightRadius={400}
+          particleCount={12}
+          glowColor="213, 32, 32"
+          disableAnimations={false}
+          cardData={sellingPointsData}
         />
       </div>
     </div>
