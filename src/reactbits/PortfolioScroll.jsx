@@ -47,15 +47,36 @@ const PortfolioSection = () => {
       // Hide left container initially
       gsap.set(leftContainerRef.current, { autoAlpha: 0 });
 
-      // Show/hide the fixed left container based on section visibility
+      // Show the fixed left container when entering section
       ScrollTrigger.create({
         trigger: sectionRef.current,
         start: "top 40%",
-        end: "bottom bottom",
+        end: "top top",
         onEnter: () => gsap.set(leftContainerRef.current, { autoAlpha: 1 }),
-        onLeave: () => gsap.set(leftContainerRef.current, { autoAlpha: 0 }),
-        onEnterBack: () => gsap.set(leftContainerRef.current, { autoAlpha: 1 }),
         onLeaveBack: () => gsap.set(leftContainerRef.current, { autoAlpha: 0 }),
+      });
+
+      // Switch from fixed to absolute when reaching end of section
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "bottom bottom",
+        end: "bottom top",
+        onEnter: () => {
+          // Switch to absolute positioning, anchored to bottom of section
+          gsap.set(leftContainerRef.current, {
+            position: 'absolute',
+            top: 'auto',
+            bottom: '100px', // Distance from bottom of section
+          });
+        },
+        onLeaveBack: () => {
+          // Switch back to fixed
+          gsap.set(leftContainerRef.current, {
+            position: 'fixed',
+            top: 0,
+            bottom: 'auto',
+          });
+        },
       });
 
       // Create scroll triggers for transitions between panels
@@ -71,7 +92,7 @@ const PortfolioSection = () => {
           ScrollTrigger.create({
             trigger: panel,
             start: "bottom 70%",
-            end: "bottom 30%",
+            end: "bottom 50%",
             scrub: 0.3,
             onUpdate: (self) => {
               const progress = self.progress;
@@ -186,10 +207,35 @@ const PortfolioSection = () => {
                   </div>
                 ))}
               </div>
+
+              
             </div>
           ))}
         </div>
+
+        {/* Centered CTA Button */}
+        <div className="w-full flex justify-center py-16">
+          <button 
+            className="relative flex gap-3 items-center px-8 py-4 rounded-[7px] transition-transform hover:scale-105"
+            style={{ background: 'transparent', border: 'none' }}
+          >
+            {/* Animated gradient border background */}
+            <span className="absolute inset-[-1.5px] rounded-[8px] bg-gradient-to-r from-white via-gray-400 to-white" style={{
+              backgroundSize: '200% 100%',
+              animation: 'shine 5s linear infinite'
+            }}></span>
+            
+            {/* Inner red gradient background */}
+            <span className="absolute inset-0 rounded-[7px]" style={{ backgroundImage: "linear-gradient(179deg, rgb(153, 32, 32) 38.369%, rgb(255, 53, 53) 131.85%)" }}></span>
+          
+            <span className="font-medium text-xl text-white tracking-[-0.48px] leading-normal relative z-10 font-primary">
+              View All Projects
+            </span>
+          </button>
+        </div>
+        
       </div>
+      
     </div>
   );
 };
