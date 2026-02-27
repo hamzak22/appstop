@@ -2,7 +2,6 @@ import './App.css'
 import logo from './assets/logo.svg';
 import LogoLoop from './reactbits/LogoLoop/LogoLoop.jsx';
 import FlowingMenu from './reactbits/FlowingMenu/FlowingMenu.jsx';
-import WhyChooseUs from './reactbits/WhyChooseUs/WhyChooseUs.jsx';
 import Masonry from './reactbits/Masonry.jsx';
 import MagicBento from './reactbits/MagicBento.jsx';
 import TextLoop from './reactbits/TextLoop/TextLoop.jsx';
@@ -13,6 +12,7 @@ import {
   SiTailwindcss,
   SiVite
 } from 'react-icons/si';
+import PortfolioSection from './reactbits/PortfolioScroll.jsx';
 
 // Figma design assets
 const imgVector = "https://www.figma.com/api/mcp/asset/9c1b1105-69a8-4498-a6b6-fbf9bd0be4b1";
@@ -168,13 +168,12 @@ function App() {
       </div>
     </div>
 
-    {/* Why Choose Us
     <div>
-      <WhyChooseUs/>
-    </div> */}
+      <PortfolioSection/>
+    </div>
 
     {/* Our Recent Work Section */}
-    <div className='relative min-h-fit w-full bg-[#b52d2d] mt-20 px-6 md:px-20 lg:px-40 py-40 pb-60'>
+    <div className='relative min-h-fit w-full bg-[#b52d2d] px-6 md:px-20 lg:px-40 py-40 pb-60'>
       {/* <div className='flex flex-col items-center mb-16'>
         <div className='bg-primary-red/10 inline-flex w-fit rounded-full px-4 py-1.5 mb-6 border border-primary-red'>
           <p className='text-center text-sm font-semibold text-primary-red'>Our Recent Work</p>
