@@ -5,6 +5,9 @@ import FlowingMenu from './reactbits/FlowingMenu/FlowingMenu.jsx';
 import Masonry from './reactbits/Masonry.jsx';
 import MagicBento from './reactbits/MagicBento.jsx';
 import TextLoop from './reactbits/TextLoop/TextLoop.jsx';
+import ClientReviews from './reactbits/ClientReviews.jsx';
+import Comparison from './reactbits/Comparison.jsx';
+import FAQ from './reactbits/FAQ.jsx';
 import { FaReact } from 'react-icons/fa6';
 import {
   SiJavascript,
@@ -30,38 +33,32 @@ const sellingPointsData = [
   {
     color: '#0a0a0a',
     title: 'Unlimited Revisions',
-    description: 'We refine until you\'re 100% satisfied with the result',
-    label: '♾️ Revisions'
+    description: 'We\'re committed to your satisfaction with unlimited revisions at every step. Our mission is to make your vision come to life exactly as you imagine.',
+    label: '∞'
   },
   {
     color: '#0a0a0a',
-    title: 'Fast Development',
-    description: 'Quick turnaround times without compromising quality',
-    label: '⚡ Speed'
+    title: 'Lifetime Support',
+    description: 'With our lifetime support, you\'re never alone. We\'ll be there for you at every stage with necessary guidance and assistance whenever you need it.',
+    label: '◆'
   },
   {
     color: '#0a0a0a',
-    title: 'Dedicated Support',
-    description: '24/7 support team ready to assist you anytime',
-    label: '🛟 Support'
+    title: 'Personalised Plans',
+    description: 'Get top-quality service without breaking the bank. Our rates are designed to fit your budget so that you can get the best value for your investment.',
+    label: '$'
   },
   {
     color: '#0a0a0a',
-    title: 'Scalable Solutions',
-    description: 'Apps built to grow with your business needs',
-    label: '📈 Growth'
+    title: 'Custom Design Solutions',
+    description: 'Our easy payment options are completely flexible. So, you can invest in your success while staying within your budget.',
+    label: '◯'
   },
   {
     color: '#0a0a0a',
-    title: 'Modern Tech Stack',
-    description: 'Using the latest technologies for optimal performance',
-    label: '🚀 Technology'
-  },
-  {
-    color: '#0a0a0a',
-    title: 'Transparent Pricing',
-    description: 'No hidden fees, clear and upfront pricing',
-    label: '💰 Pricing'
+    title: '24/7 Customer Support',
+    description: 'Benefit from the expertise of our carefully chosen resources that are designed to make your journey smooth and effortless with outstanding results.',
+    label: '★'
   }
 ];
 
@@ -254,6 +251,8 @@ function App() {
       />
     </div>
 
+   
+
     {/* Magic Bento Section */}
     <div className='relative w-full bg-black px-6 md:px-20 lg:px-40 py-20 -mt-20 rounded-t-[50px]'>
       <div className='flex flex-col items-center mb-12'>
@@ -282,6 +281,15 @@ function App() {
         />
       </div>
     </div>
+
+    {/* Comparison Section */}
+    <Comparison />
+
+     {/* Client Reviews Section */}
+    <ClientReviews />
+
+    {/* FAQ Section */}
+    <FAQ />
 
     </>
   )
