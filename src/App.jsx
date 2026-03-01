@@ -8,6 +8,7 @@ import TextLoop from './reactbits/TextLoop/TextLoop.jsx';
 import ClientReviews from './reactbits/ClientReviews.jsx';
 import Comparison from './reactbits/Comparison.jsx';
 import FAQ from './reactbits/FAQ.jsx';
+import ContactForm from './reactbits/ContactForm.jsx';
 import { FaReact } from 'react-icons/fa6';
 import {
   SiJavascript,
@@ -290,6 +291,9 @@ function App() {
 
     {/* FAQ Section */}
     <FAQ />
+
+    {/* Contact Form Section */}
+    <ContactForm />
 
     </>
   )
