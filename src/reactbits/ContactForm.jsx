@@ -111,7 +111,7 @@ const ContactForm = () => {
 
               <button 
                 type="submit" 
-                className="mt-2 text-white bg-gradient-to-r from-[#8b5cf6] to-[#6d28d9] hover:from-[#7c3aed] hover:to-[#5b21b6] px-8 py-3.5 rounded-xl font-semibold flex items-center justify-center gap-2 w-fit transition-all hover:scale-105 font-primary text-[15px]"
+                className="mt-2 text-white bg-gradient-to-r from-[#f83131] to-[#D52020] hover:from-[#D52020] hover:to-[#880f0f] px-8 py-3.5 rounded-xl font-semibold flex items-center justify-center gap-2 w-fit transition-all hover:scale-105 font-primary text-[15px]"
               >
                 Let's Connect <FaArrowRight className="text-sm" />
               </button>
