@@ -10,6 +10,7 @@ import ClientReviews from '../reactbits/ClientReviews.jsx';
 import Comparison from '../reactbits/Comparison.jsx';
 import FAQ from '../reactbits/FAQ.jsx';
 import ContactForm from '../reactbits/ContactForm.jsx';
+import Button from '../components/Button.jsx';
 import { FaReact } from 'react-icons/fa6';
 import {
   SiJavascript,
@@ -104,24 +105,12 @@ const Home = () => {
           </div>
 
           {/* CTA Button */}
-          <button 
-            className="relative flex gap-3 items-center px-5 py-3 rounded-[7px] transition-transform hover:scale-105"
-            style={{ background: 'transparent', border: 'none' }}
+          <Button 
+            href="#contact"
+            icon={<img alt="" className="size-6 relative z-10" src={imgMaterialSymbolsCall} />}
           >
-            {/* Animated gradient border background */}
-            <span className="absolute inset-[-1.5px] rounded-[8px] bg-linear-to-r from-white via-gray-400 to-white -z-10" style={{
-              backgroundSize: '200% 100%',
-              animation: 'shine 5s linear infinite'
-            }}></span>
-            
-            {/* Inner red gradient background */}
-            <span className="absolute inset-0 rounded-[7px] -z-10" style={{ backgroundImage: "linear-gradient(179deg, rgb(153, 32, 32) 38.369%, rgb(255, 53, 53) 131.85%)" }}></span>
-            
-            <img alt="" className="size-6 relative z-10" src={imgMaterialSymbolsCall} />
-            <span className="font-medium text-xl text-white tracking-[-0.48px] leading-normal relative z-10 font-primary">
-              Book a Call
-            </span>
-          </button>
+            Book a Call
+          </Button>
 
           <div className="w-screen pt-6 flex justify-center mb-40">
             <LogoLoop

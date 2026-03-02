@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import FlowingMenu from '../reactbits/FlowingMenu/FlowingMenu.jsx';
+import ContactForm from '../reactbits/ContactForm.jsx';
 
 const imgVector = "https://www.figma.com/api/mcp/asset/9c1b1105-69a8-4498-a6b6-fbf9bd0be4b1";
 
@@ -135,6 +136,8 @@ const Projects = () => {
           </div>
         )}
       </div>
+
+      <ContactForm/>
     </>
   );
 };

@@ -14,7 +14,7 @@ const Navbar = () => {
       <div className="hidden md:flex gap-8">
         <Link to="/" className="text-white hover:text-red-400 font-primary font-medium transition-colors">Home</Link>
         <Link to="/projects" className="text-white hover:text-red-400 font-primary font-medium transition-colors">Projects</Link>
-        <a href="#services" className="text-white hover:text-red-400 font-primary font-medium transition-colors">Services</a>
+        <Link to="/services" className="text-white hover:text-red-400 font-primary font-medium transition-colors">Services</Link>
         <a href="#contact" className="text-white hover:text-red-400 font-primary font-medium transition-colors">Contact</a>
       </div>
 
