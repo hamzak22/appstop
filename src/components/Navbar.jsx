@@ -1,27 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import PillNav from '../reactbits/Nav';
 import logo from '../assets/logo.svg';
 
 const Navbar = () => {
-  return (
-    <nav className="absolute top-0 left-0 w-full z-50 flex items-center justify-between px-8 py-6 pointer-events-auto">
-      <Link to="/" className="flex items-center">
-        {/* You can adjust logo size and styling as needed */}
-        <img src={logo} alt="appstop" className="h-10 w-auto" />
-      </Link>
-      
-      {/* Placeholder for navigation links */}
-      <div className="hidden md:flex gap-8">
-        <Link to="/" className="text-white hover:text-red-400 font-primary font-medium transition-colors">Home</Link>
-        <Link to="/projects" className="text-white hover:text-red-400 font-primary font-medium transition-colors">Projects</Link>
-        <Link to="/services" className="text-white hover:text-red-400 font-primary font-medium transition-colors">Services</Link>
-        <a href="#contact" className="text-white hover:text-red-400 font-primary font-medium transition-colors">Contact</a>
-      </div>
+  const location = useLocation();
 
-      <button className="bg-white/10 border border-white/20 text-white px-5 py-2 rounded-full font-primary hover:bg-white/20 transition-colors">
-        Get Started
-      </button>
-    </nav>
+  return (
+    <PillNav
+      logo={logo}
+      logoAlt="Appstop Logo"
+      items={[
+        { label: 'Home', href: '/' },
+        { label: 'About', href: '/about' },
+        { label: 'Projects', href: '/projects' },
+        { label: 'Services', href: '/services' }
+      ]}
+      activeHref={location.pathname}
+      className="custom-nav mt-4"
+      ease="power2.easeOut"
+      baseColor="#ffffff"
+      pillColor="#D52020"
+      hoveredPillTextColor="#D52020"
+      pillTextColor="#ffffff"
+      theme="light"
+      initialLoadAnimation={false}
+    />
   );
 };
 

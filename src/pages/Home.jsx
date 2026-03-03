@@ -68,7 +68,7 @@ const sellingPointsData = [
 const Home = () => {
   return (
     <>
-      <div className="bg-[#050505] relative w-full min-h-[115vh] overflow-hidden pb-50">
+      <div className="bg-[#050505] relative w-full min-h-[112vh] overflow-hidden pb-30">
         {/* Background gradient vector */}
         <div className="absolute h-150 left-41 top-[617.69px] w-[1930.891px]">
           <div className="absolute inset-[-56.61%_-16.33%]">
@@ -76,13 +76,13 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Logo (Temporary place, should probably be in Navbar later) */}
+        {/* Logo (Temporary place, should probably be in Navbar later)
         <div className="absolute left-1/2 top-30.5 -translate-x-1/2 z-10">
           <img src={logo} alt="appstop" className="h-auto w-auto" />
-        </div>
+        </div> */}
 
         {/* Main content */}
-        <div className="absolute left-1/2 top-1/2 mt-20 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-12 items-center w-214.5 max-w-[90vw]">
+        <div className="absolute left-1/2 top-1/2 mt-5 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-12 items-center w-214.5 max-w-[90vw]">
           {/* Text content */}
           <div className="flex flex-col gap-12.25 items-center w-full">
             <p className="font-semibold text-[20px] text-center text-white tracking-normal leading-normal font-primary">

@@ -231,7 +231,7 @@ const Services = () => {
               }}
             >
               <div 
-                className="bg-[#111111] bg-[linear-gradient(347deg,rgba(220,38,38,0.2),rgba(10,10,10,0.4))] w-full h-full p-8 md:p-10 rounded-[2rem] shadow-[inset_0px_8px_24px_rgba(255,255,255,0.09)] flex flex-col gap-6 relative overflow-hidden group hover:border-primary-red/70 transition-all duration-300 border border-transparent"
+                className="bg-[#0f0f0f] bg-[linear-gradient(347deg,rgba(220,38,38,0.2),rgba(10,10,10,0.4))] w-full h-full p-8 md:p-10 rounded-[2rem] shadow-[inset_0px_8px_10px_rgba(255,255,255,0.09)] flex flex-col gap-6 relative overflow-hidden group hover:border-primary-red/70 transition-all duration-300 border border-transparent"
               >
                 {/* Subtle Red glow on hover */}
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary-red/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
