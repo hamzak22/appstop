@@ -19,10 +19,12 @@ import {
   SiVite
 } from 'react-icons/si';
 import PortfolioSection from '../reactbits/PortfolioScroll.jsx';
+import  imgMaterialSymbolsCall  from '../../public/images/call_icon.png';
+import imgVector from '../../public/images/bg-gradient.png';
 
 // Figma design assets
-const imgVector = "https://www.figma.com/api/mcp/asset/9c1b1105-69a8-4498-a6b6-fbf9bd0be4b1";
-const imgMaterialSymbolsCall = "https://www.figma.com/api/mcp/asset/3152bf59-f60a-45eb-8b4d-04554f0f446b";
+// const imgVector = "https://www.figma.com/api/mcp/asset/9c1b1105-69a8-4498-a6b6-fbf9bd0be4b1";
+// const imgMaterialSymbolsCall = "https://www.figma.com/api/mcp/asset/3152bf59-f60a-45eb-8b4d-04554f0f446b";
 
 const techLogos = [
   { title: 'React', node: <FaReact className="text-white/80" /> },
@@ -70,7 +72,7 @@ const Home = () => {
     <>
       <div className="bg-[#050505] relative w-full min-h-[112vh] overflow-hidden pb-30">
         {/* Background gradient vector */}
-        <div className="absolute h-150 left-41 top-[617.69px] w-[1930.891px]">
+        <div className="absolute h-150 left-41 top-[400px] w-[1930.891px]">
           <div className="absolute inset-[-56.61%_-16.33%]">
             <img alt="" className="block max-w-none size-full" src={imgVector} />
           </div>

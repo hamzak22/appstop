@@ -6,7 +6,7 @@ import Button from '../components/Button.jsx';
 import ContactForm from '../reactbits/ContactForm.jsx';
 import ClientReviews from '../reactbits/ClientReviews.jsx';
 
-const imgVector = "https://www.figma.com/api/mcp/asset/9c1b1105-69a8-4498-a6b6-fbf9bd0be4b1";
+import imgVector from '../../public/images/bg-gradient.png';
 
 const stats = [
   { id: 1, number: '150+', label: 'Projects Completed', icon: <FaProjectDiagram className="w-6 h-6" /> },
@@ -33,9 +33,9 @@ const About = () => {
     <div className="min-h-screen bg-[#F4F4F5] font-primary">
       {/* Header Section */}
       <div className="bg-[#050505] relative w-full h-[60vh] min-h-[500px] overflow-hidden flex flex-col justify-center items-center">
-        <div className="absolute h-150 left-41 top-[30%] w-[1930.891px] -translate-y-1/2">
+        <div className="absolute h-150 left-41 top-[70%] w-[1930.891px] -translate-y-1/2">
           <div className="absolute inset-[-56.61%_-16.33%]">
-            <img alt="" className="block max-w-none size-full opacity-50" src={imgVector} />
+            <img alt="" className="block max-w-none size-full opacity-80" src={imgVector} />
           </div>
         </div>
 
