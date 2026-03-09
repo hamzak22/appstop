@@ -11,7 +11,7 @@ const projects = [
     images: ["https://res.cloudinary.com/dls57pxvo/image/upload/v1773062952/app2_if4ugp.jpg", "https://res.cloudinary.com/dls57pxvo/image/upload/v1773062952/app1_dxdgyr.jpg"],
   },
   {
-    niche: "Web Development",
+    niche: "App Development",
     description: "Frontend Engineering, E-commerce, Performance Optimization, React Apps, Backend Architecture, and API Integration.",
     images: ["https://res.cloudinary.com/dls57pxvo/image/upload/v1773063325/app3_oitcbv.jpg", "https://res.cloudinary.com/dls57pxvo/image/upload/v1773063798/app4_rvzyd8.jpg"],
   },
