@@ -11,9 +11,19 @@ const projects = [
     images: ["https://res.cloudinary.com/dls57pxvo/image/upload/v1773062952/app2_if4ugp.jpg", "https://res.cloudinary.com/dls57pxvo/image/upload/v1773062952/app1_dxdgyr.jpg"],
   },
   {
-    niche: "App Development",
+    niche: "E-Commerce App Development",
     description: "Frontend Engineering, E-commerce, Performance Optimization, React Apps, Backend Architecture, and API Integration.",
-    images: ["https://res.cloudinary.com/dls57pxvo/image/upload/v1773063325/app3_oitcbv.jpg", "https://res.cloudinary.com/dls57pxvo/image/upload/v1773063798/app4_rvzyd8.jpg"],
+    images: ["https://res.cloudinary.com/dls57pxvo/image/upload/v1773089077/app5_df1dcn.jpg", "https://res.cloudinary.com/dls57pxvo/image/upload/v1773089325/ecom1_ar6bdb.jpg",],
+  },
+  {
+    niche: "Rideshare App Development",
+    description: "Rideshare App and Carpooling App Design and Development, Frontend Engineering, Performance Optimization, React Apps, Backend Architecture, and API Integration.",
+    images: ["https://res.cloudinary.com/dls57pxvo/image/upload/v1773089056/rideshare2_rgwxoc.jpg", "https://res.cloudinary.com/dls57pxvo/image/upload/v1773089066/rideshare1_d91izg.jpg",],
+  },
+  {
+    niche: "Food Delivery App Development",
+    description: "Food Delivery App Design and Development, Frontend Engineering, Performance Optimization, React Apps, Backend Architecture, and API Integration.",
+    images: ["https://res.cloudinary.com/dls57pxvo/image/upload/v1773089585/food-1_kvyxb5.jpg", "https://res.cloudinary.com/dls57pxvo/image/upload/v1773063798/app4_rvzyd8.jpg",],
   },
 ];
 
@@ -111,17 +121,17 @@ const PortfolioSection = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="bg-black text-white w-full mt-20">
+    <div ref={containerRef} className="bg-black text-white w-full">
       {/* Section Header */}
-      <div className="w-full px-6 md:px-20 py-20 md:py-32">
+      <div className="w-full px-6 md:px-20 py-20 md:py-32 ml-20">
         <div className="mb-4">
           <span className="text-primary-red border border-primary-red rounded-full px-4 py-1 text-sm font-medium inline-block">
-            What We Do
+            Our Portfolio
           </span>
         </div>
         <h1 className="text-5xl md:text-6xl font-bold leading-tight font-primary">
-          We Design{' '}
-          <span className="font-playfair italic">Brands</span>
+          We Develop{' '}
+          <span className="font-playfair italic">Apps</span>
           {' '}That{' '}
           <span className="font-playfair italic">Speak</span>
           {' '}To Audiences
@@ -144,14 +154,17 @@ const PortfolioSection = () => {
                 ref={(el) => (textItemRefs.current[index] = el)}
                 className="absolute inset-0 flex flex-col justify-center will-change-transform pointer-events-auto"
               >
-                <div className="w-16 h-px bg-purple-600/50 mb-6"></div>
+                <div className="w-14 h-px bg-purple-600/50 mb-6"></div>
                 <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight font-primary">
-                  {project.niche.split(' ').map((word, i, arr) => (
-                    <span key={i} className={i === arr.length - 1 ? 'font-playfair italic' : ''}>
+                {project.niche.split(' ').map((word, i, arr) => (
+                  <React.Fragment key={i}>
+                    {i === arr.length - 1 && <br />}
+                    <span className={i === arr.length - 1 ? 'font-playfair italic text-red-500' : ''}>
                       {word}{i !== arr.length - 1 ? ' ' : ''}
                     </span>
-                  ))}
-                </h2>
+                  </React.Fragment>
+                ))}
+              </h2>
                 <p className="text-gray-400 max-w-md mb-8 text-lg leading-relaxed">
                   {project.description}
                 </p>

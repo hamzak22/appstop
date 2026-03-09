@@ -24,6 +24,8 @@ import  imgMaterialSymbolsCall  from '../../public/images/call_icon.png';
 import imgVector from '../../public/images/bg-gradient.png';
 import space3d from '../../public/images/space-3d.png';
 import star3d from '../../public/images/star-3d.png';
+import rocket1 from '../../public/images/rocket1.png';
+import rocket2 from '../../public/images/rocket2.png';
 
 // Figma design assets
 // const imgVector = "https://www.figma.com/api/mcp/asset/9c1b1105-69a8-4498-a6b6-fbf9bd0be4b1";
@@ -140,7 +142,7 @@ const Home = () => {
       {/* About AppStop Section */}
       <AboutAppStop />
 
-      {/* Industries Section */}
+      {/* Industries Section
       <div className='relative w-full bg-white px-40 pt-20 rounded-t-[100px] -mt-24'>
         <div className='flex justify-center mb-6'>
           <div className='bg-primary-red/10 rounded-full px-4 py-1.5 border border-primary-red'>
@@ -165,7 +167,7 @@ const Home = () => {
             borderColor="#ddd"
           />
         </div>
-      </div>
+      </div> */}
 
       <div>
         <PortfolioSection/>
@@ -247,9 +249,11 @@ const Home = () => {
 
       {/* Magic Bento Section */}
       <div className='relative w-full bg-black px-6 md:px-20 lg:px-40 py-20 -mt-20 rounded-t-[50px]'>
+        <img src={rocket2} alt="Space 3d element" className="absolute top-[5%] right-0 w-[400px] z-10 pointer-events-none object-contain animate-float" />
+        <img src={rocket1} alt="Star 3d element" className="absolute top-[45%] left-0 w-[300px] z-10 pointer-events-none object-contain animate-float" style={{ animationDelay: '1s' }} />
         <div className='flex flex-col items-center mb-12'>
           <h2 className='text-center text-4xl md:text-5xl font-bold text-white font-primary leading-tight'>
-            We Design for the Future to
+            We Develop for the Future to
           </h2>
           <h2 className='text-center text-4xl md:text-5xl font-semibold text-white italic font-playfair'>
             Drive Today's Success
