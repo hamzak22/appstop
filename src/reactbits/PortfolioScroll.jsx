@@ -8,17 +8,12 @@ const projects = [
   {
     niche: "UI/UX Design",
     description: "UI/UX Design, App Design, Website Design, Dashboard Design, Wireframing & Prototyping, Interaction Design, and Product Design.",
-    images: ["/api/placeholder/400/500", "/api/placeholder/400/600"],
+    images: ["https://res.cloudinary.com/dls57pxvo/image/upload/v1773062952/app2_if4ugp.jpg", "https://res.cloudinary.com/dls57pxvo/image/upload/v1773062952/app1_dxdgyr.jpg"],
   },
   {
     niche: "Web Development",
     description: "Frontend Engineering, E-commerce, Performance Optimization, React Apps, Backend Architecture, and API Integration.",
-    images: ["/api/placeholder/400/550", "/api/placeholder/400/450"],
-  },
-  {
-    niche: "Brand Strategy",
-    description: "Visual Identity, Logo Design, Brand Guidelines, Tone of Voice, Positioning, Market Research, and Creative Direction.",
-    images: ["/api/placeholder/400/520", "/api/placeholder/400/480"],
+    images: ["https://res.cloudinary.com/dls57pxvo/image/upload/v1773063325/app3_oitcbv.jpg", "https://res.cloudinary.com/dls57pxvo/image/upload/v1773063798/app4_rvzyd8.jpg"],
   },
 ];
 
@@ -139,7 +134,7 @@ const PortfolioSection = () => {
         {/* ── LEFT: FIXED text container (doesn't scroll) ── */}
         <div 
           ref={leftContainerRef}
-          className="hidden md:flex fixed left-0 top-0 w-1/2 h-screen items-center px-6 md:px-20 overflow-hidden z-10 pointer-events-none"
+          className="hidden md:flex fixed left-20 top-0 w-1/2 h-screen items-center px-6 md:px-20 overflow-hidden z-10 pointer-events-none"
         >
           {/* This container holds all text items stacked on top of each other */}
           <div className="relative w-full h-64">
@@ -160,7 +155,7 @@ const PortfolioSection = () => {
                 <p className="text-gray-400 max-w-md mb-8 text-lg leading-relaxed">
                   {project.description}
                 </p>
-                <button className="text-purple-500 flex items-center gap-2 hover:text-purple-400 transition-colors font-medium text-lg group w-fit">
+                <button className="text-primary-red flex items-center gap-2 hover:text-red-400 transition-colors font-medium text-lg group w-fit">
                   See More{' '}
                   <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
                 </button>
@@ -170,7 +165,7 @@ const PortfolioSection = () => {
         </div>
 
         {/* ── RIGHT: scrolling image panels ── */}
-        <div className="w-full md:w-1/2 md:ml-auto">
+        <div className="w-full md:w-1/2 md:ml-auto mr-20">
           {projects.map((project, index) => (
             <div
               key={index}

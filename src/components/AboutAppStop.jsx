@@ -56,7 +56,7 @@ const AboutAppStop = () => {
 
           {/* Content Inside Box - Bottom Aligned */}
           <div className="relative z-20 p-8 flex flex-col gap-6 items-start">
-            <p className='font-semibold text-xl text-white/50'>Appstop</p>
+            <p className='font-semibold text-xl text-white/50'>App Stop</p>
             <h3 className="font-bold text-4xl text-white font-primary leading-tight">
               From Idea to Impact: Crafting Mobile Apps That Drive Results
             </h3>
