@@ -19,8 +19,11 @@ import {
   SiVite
 } from 'react-icons/si';
 import PortfolioSection from '../reactbits/PortfolioScroll.jsx';
+import AboutAppStop from '../components/AboutAppStop.jsx';
 import  imgMaterialSymbolsCall  from '../../public/images/call_icon.png';
 import imgVector from '../../public/images/bg-gradient.png';
+import space3d from '../../public/images/space-3d.png';
+import star3d from '../../public/images/star-3d.png';
 
 // Figma design assets
 // const imgVector = "https://www.figma.com/api/mcp/asset/9c1b1105-69a8-4498-a6b6-fbf9bd0be4b1";
@@ -71,6 +74,10 @@ const Home = () => {
   return (
     <>
       <div className="bg-[#050505] relative w-full min-h-[112vh] overflow-hidden pb-30">
+        {/* 3D Elements */}
+        <img src={space3d} alt="Space 3d element" className="absolute top-[5%] right-0 w-[400px] z-10 pointer-events-none object-contain animate-float" />
+        <img src={star3d} alt="Star 3d element" className="absolute top-[45%] left-0 w-[300px] z-10 pointer-events-none object-contain animate-float" style={{ animationDelay: '1s' }} />
+
         {/* Background gradient vector */}
         <div className="absolute h-150 left-41 top-[400px] w-[1930.891px]">
           <div className="absolute inset-[-56.61%_-16.33%]">
@@ -129,6 +136,9 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      {/* About AppStop Section */}
+      <AboutAppStop />
 
       {/* Industries Section */}
       <div className='relative w-full bg-white px-40 pt-20 rounded-t-[100px] -mt-24'>
