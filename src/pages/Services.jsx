@@ -18,7 +18,7 @@ const servicesData = [
     id: 1,
     title: 'UI UX Design',
     description: 'When it comes to UI/UX design, we create experiences that are simple to navigate. Our goal is to deliver user-friendly interactions that align with your brand and fulfill user needs.',
-    bannerImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80',
+    bannerImage: 'https://res.cloudinary.com/dls57pxvo/image/upload/v1773177638/UIUX_cywdsd.jpg',
     features: [
       'UI/UX Design',
       'Visual UI Design',
@@ -36,9 +36,9 @@ const servicesData = [
   },
   {
     id: 2,
-    title: 'Web Development',
+    title: 'Mobile App Development',
     description: 'We build responsive, fast, and scalable web applications tailored to your business goals. From landing pages to complex corporate platforms.',
-    bannerImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&q=80',
+    bannerImage: 'https://res.cloudinary.com/dls57pxvo/image/upload/v1773177709/service_header_rnrlv1.jpg',
     features: [
       'Frontend Development',
       'Backend Development',
@@ -54,26 +54,6 @@ const servicesData = [
       'https://cdn.worldvectorlogo.com/logos/tailwindcss.svg',
     ]
   },
-  {
-    id: 3,
-    title: 'Mobile App Development',
-    description: 'Transform your ideas into powerful mobile experiences. We design and develop native and cross-platform apps for iOS and Android.',
-    bannerImage: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1600&q=80',
-    features: [
-      'iOS Development',
-      'Android Development',
-      'Cross-Platform Apps',
-      'App UI/UX Design',
-      'App Store Optimization',
-      'App Maintenance',
-    ],
-    tools: [
-      'https://cdn.worldvectorlogo.com/logos/swift-15.svg',
-      'https://cdn.worldvectorlogo.com/logos/kotlin-1.svg',
-      'https://cdn.worldvectorlogo.com/logos/flutter.svg',
-      'https://cdn.worldvectorlogo.com/logos/react-native-1.svg',
-    ]
-  }
 ];
 
 const whyChooseUsData = [

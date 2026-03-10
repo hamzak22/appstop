@@ -23,7 +23,7 @@ const projectsData = [
     description: 'Trackory was created to solve visibility gaps in shipment tracking and delivery coordination. Research with 28 logistics professionals revealed...',
     category: 'SaaS',
     industry: 'Business Consulting',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+    image: 'https://res.cloudinary.com/dls57pxvo/image/upload/v1773177092/nfl_q8r4qp.jpg',
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const projectsData = [
     description: 'Materio was created to help businesses streamline supplier and inventory management. Surveys of 32 inventory managers revealed 64% struggle...',
     category: 'SaaS',
     industry: 'Business Consulting',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+    image: 'https://res.cloudinary.com/dls57pxvo/image/upload/v1773177092/vita_vji4yh.jpg',
   },
   {
     id: 3,
@@ -39,15 +39,31 @@ const projectsData = [
     description: 'A comprehensive platform for real-time vehicle health monitoring and maintenance scheduling.',
     category: 'Mobile App',
     industry: 'Automotive',
-    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80',
+    image: 'https://res.cloudinary.com/dls57pxvo/image/upload/v1773177092/habitforge_zs2ziu.jpg',
   },
   {
     id: 4,
+    title: 'AutoMate - Vehicle Diagnostics',
+    description: 'A comprehensive platform for real-time vehicle health monitoring and maintenance scheduling.',
+    category: 'Mobile App',
+    industry: 'Fintech',
+    image: 'https://res.cloudinary.com/dls57pxvo/image/upload/v1773177342/ai_ckcllp.jpg',
+  },
+  {
+    id: 5,
+    title: 'AutoMate - Vehicle Diagnostics',
+    description: 'A comprehensive platform for real-time vehicle health monitoring and maintenance scheduling.',
+    category: 'Mobile App',
+    industry: 'Automotive',
+    image: 'https://res.cloudinary.com/dls57pxvo/image/upload/v1773177342/airline_nzewxb.jpg',
+  },
+  {
+    id: 6,
     title: 'GlowUp - Virtual Try-On',
     description: 'Augmented reality app allowing users to try on cosmetics virtually before purchasing.',
     category: 'Web App',
     industry: 'Beauty & Cosmetics',
-    image: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&q=80',
+    image: 'https://res.cloudinary.com/dls57pxvo/image/upload/v1773177342/food_jziexl.jpg',
   }
 ];
 
