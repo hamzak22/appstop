@@ -1,5 +1,11 @@
 import { useRef, useEffect, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
+import infinity from '../../public/images/bento-icons/infinity.png';
+import dollar from '../../public/images/bento-icons/dollar.png';
+import clock from '../../public/images/bento-icons/clock.png';
+import lifetime from '../../public/images/bento-icons/lifetime.png';
+import star from '../../public/images/bento-icons/star.png';
+
 
 const DEFAULT_PARTICLE_COUNT = 12;
 const DEFAULT_SPOTLIGHT_RADIUS = 300;
@@ -672,8 +678,11 @@ const MagicBento = ({
                   clickEffect={clickEffect}
                   enableMagnetism={enableMagnetism}
                 >
-                  <div className="card__icon flex justify-start items-start mb-4 relative text-white text-3xl h-12">
-                    <span className="card__label">{card.label}</span>
+                  <div className="card__icon flex justify-start items-start mb-4 relative text-white text-3xl h-20">
+                    {card.icon
+                      ? <img src={card.icon} alt={card.title} className="h-20 w-20 object-contain" />
+                      : <span className="card__label">{card.label}</span>
+                    }
                   </div>
                   <div className="card__content flex flex-col relative text-white flex-1 justify-start">
                     <div>
@@ -807,7 +816,10 @@ const MagicBento = ({
                 }}
               >
                 <div className="card__icon flex justify-start items-start mb-4 relative text-white text-3xl h-12">
-                  <span className="card__label">{card.label}</span>
+                  {card.icon
+                    ? <img src={card.icon} alt={card.title} className="h-12 w-12 object-contain" />
+                    : <span className="card__label">{card.label}</span>
+                  }
                 </div>
                 <div className="card__content flex flex-col relative text-white flex-1 justify-start">
                   <div>

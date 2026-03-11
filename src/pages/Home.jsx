@@ -1,16 +1,13 @@
 import React from 'react';
 import '../App.css';
-import logo from '../assets/logo.svg';
 import LogoLoop from '../reactbits/LogoLoop/LogoLoop.jsx';
-import FlowingMenu from '../reactbits/FlowingMenu/FlowingMenu.jsx';
-import Masonry from '../reactbits/Masonry.jsx';
 import MagicBento from '../reactbits/MagicBento.jsx';
-import TextLoop from '../reactbits/TextLoop/TextLoop.jsx';
 import ClientReviews from '../reactbits/ClientReviews.jsx';
 import Comparison from '../reactbits/Comparison.jsx';
 import FAQ from '../reactbits/FAQ.jsx';
 import ContactForm from '../reactbits/ContactForm.jsx';
 import Button from '../components/Button.jsx';
+import ServicesShowcase from '../components/ServicesShowcase.jsx';
 import { FaReact } from 'react-icons/fa6';
 import {
   SiJavascript,
@@ -26,6 +23,12 @@ import space3d from '../../public/images/space-3d.png';
 import star3d from '../../public/images/star-3d.png';
 import rocket1 from '../../public/images/rocket1.png';
 import rocket2 from '../../public/images/rocket2.png';
+import iconInfinity from '../../public/images/bento-icons/infinity.png';
+import iconLifetime from '../../public/images/bento-icons/lifetime.png';
+import iconDollar from '../../public/images/bento-icons/dollar.png';
+import iconClock from '../../public/images/bento-icons/clock.png';
+import iconStar from '../../public/images/bento-icons/star.png';
+
 
 // Figma design assets
 // const imgVector = "https://www.figma.com/api/mcp/asset/9c1b1105-69a8-4498-a6b6-fbf9bd0be4b1";
@@ -44,31 +47,36 @@ const sellingPointsData = [
     color: '#0a0a0a',
     title: 'Unlimited Revisions',
     description: 'We\'re committed to your satisfaction with unlimited revisions at every step. Our mission is to make your vision come to life exactly as you imagine.',
-    label: '∞'
+    label: '∞',
+    icon: iconInfinity
   },
   {
     color: '#0a0a0a',
     title: 'Lifetime Support',
     description: 'With our lifetime support, you\'re never alone. We\'ll be there for you at every stage with necessary guidance and assistance whenever you need it.',
-    label: '◆'
+    label: '◆',
+    icon: iconLifetime
   },
   {
     color: '#0a0a0a',
     title: 'Personalised Plans',
-    description: 'Get top-quality service without breaking the bank. Our rates are designed to fit your budget so that you can get the best value for your investment.',
-    label: '$'
+    description: 'Get top-quality service without breaking the bank. ',
+    label: '$',
+    icon: iconDollar
   },
   {
     color: '#0a0a0a',
     title: 'Custom Design Solutions',
-    description: 'Our easy payment options are completely flexible. So, you can invest in your success while staying within your budget.',
-    label: '◯'
+    description: 'Our easy payment options are completely flexible.',
+    label: '◯',
+    icon: iconClock
   },
   {
     color: '#0a0a0a',
     title: '24/7 Customer Support',
-    description: 'Benefit from the expertise of our carefully chosen resources that are designed to make your journey smooth and effortless with outstanding results.',
-    label: '★'
+    description: 'Benefit from the expertise of our carefully chosen customer support team',
+    label: '★',
+    icon: iconStar
   }
 ];
 
@@ -173,82 +181,10 @@ const Home = () => {
         <PortfolioSection/>
       </div>
 
-      {/* Our Recent Work Section */}
-      <div className='relative min-h-fit w-full bg-[#b52d2d] px-6 md:px-20 lg:px-40 py-40 pb-60'>
-        {/* Text Loop - Above Masonry */}
-        <TextLoop
-          items={['Figma', 'Social Media', 'Framer', 'Branding', 'Dashboard', 'Logos', 'Webflow', 'Slide Decks', 'Mobile Apps']}
-          speed={60}
-          direction="left"
-          separator="•"
-          textClassName="text-white text-base font-medium tracking-wide"
-          separatorClassName="text-white mx-2"
-          className="mb-8"
-        />
-
-        <Masonry
-          items={[
-            {
-              id: "1",
-              img: "https://res.cloudinary.com/dls57pxvo/image/upload/v1773158167/masonry1_uyxpkh.jpg",
-              url: "#",
-              height: 400,
-            },
-            {
-              id: "2",
-              img: "https://res.cloudinary.com/dls57pxvo/image/upload/v1773089077/app5_df1dcn.jpg",
-              url: "#",
-              height: 250,
-            },
-            {
-              id: "3",
-              img: "https://res.cloudinary.com/dls57pxvo/image/upload/v1773158167/masonry2_powuxo.jpg",
-              url: "#",
-              height: 500,
-            },
-            {
-              id: "4",
-              img: "https://picsum.photos/id/1025/600/700",
-              url: "#",
-              height: 350,
-            },
-            {
-              id: "5",
-              img: "https://picsum.photos/id/1035/600/850",
-              url: "#",
-              height: 450,
-            },
-            {
-              id: "6",
-              img: "https://picsum.photos/id/1040/600/600",
-              url: "#",
-              height: 300,
-            },
-          ]}
-          ease="power3.out"
-          duration={0.6}
-          stagger={0.05}
-          animateFrom="bottom"
-          scaleOnHover
-          hoverScale={0.95}
-          blurToFocus
-          colorShiftOnHover={false}
-        />
-
-        {/* Text Loop - Below Masonry */}
-        <TextLoop
-          items={['UI/UX', 'App Design', 'Web Design', 'Prototyping', 'Wireframes', 'User Research', 'Design Systems', 'Illustrations']}
-          speed={60}
-          direction="right"
-          separator="•"
-          textClassName="text-white text-base font-medium tracking-wide"
-          separatorClassName="text-white mx-2"
-          className="mt-8"
-        />
-      </div>
+      <ServicesShowcase />
 
       {/* Magic Bento Section */}
-      <div className='relative w-full bg-black px-6 md:px-20 lg:px-40 py-20 -mt-20 rounded-t-[50px]'>
+      <div className='relative w-full bg-black px-6 md:px-20 lg:px-40 py-20 mt-0 rounded-t-[50px]'>
         <img src={rocket2} alt="Space 3d element" className="absolute top-[5%] right-0 w-[400px] z-10 pointer-events-none object-contain animate-float" />
         <img src={rocket1} alt="Star 3d element" className="absolute top-[45%] left-0 w-[300px] z-10 pointer-events-none object-contain animate-float" style={{ animationDelay: '1s' }} />
         <div className='flex flex-col items-center mb-12'>
