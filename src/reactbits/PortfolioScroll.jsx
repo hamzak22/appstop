@@ -123,13 +123,13 @@ const PortfolioSection = () => {
   return (
     <div ref={containerRef} className="bg-black text-white w-full">
       {/* Section Header */}
-      <div className="w-full px-6 md:px-20 py-20 md:py-32 ml-20">
+      <div className="w-full px-6 pt-15 md:px-20 md:py-32 md:ml-20">
         <div className="mb-4">
           <span className="text-primary-red border border-primary-red rounded-full px-4 py-1 text-sm font-medium inline-block">
             Our Portfolio
           </span>
         </div>
-        <h1 className="text-5xl md:text-6xl font-bold leading-tight font-primary">
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight font-primary">
           We Develop{' '}
           <span className="font-playfair italic">Apps</span>
           {' '}That{' '}
@@ -182,25 +182,25 @@ const PortfolioSection = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`right-panel-${index} flex flex-col gap-6 px-6 md:px-12 py-20 items-center justify-center min-h-screen`}
+              className={`right-panel-${index} flex flex-col gap-6 px-6 py-5 md:px-12 md:py-20 items-center justify-center min-h-screen`}
             >
               {/* Mobile: show heading inline */}
-              <div className="block md:hidden w-full mb-6">
-                <h2 className="text-4xl font-bold mb-4 leading-tight font-primary">
+              <div className="block md:hidden w-full mb-2">
+                <h2 className="text-3xl font-bold mb-4 leading-tight font-primary">
                   {project.niche.split(' ').map((word, i, arr) => (
                     <span key={i} className={i === arr.length - 1 ? 'font-playfair italic' : ''}>
                       {word}{i !== arr.length - 1 ? ' ' : ''}
                     </span>
                   ))}
                 </h2>
-                <p className="text-gray-400 text-base leading-relaxed mb-4">{project.description}</p>
-                <button className="text-purple-500 flex items-center gap-2 font-medium group">
+                <p className="text-gray-400 text-[14px] leading-relaxed mb-4">{project.description}</p>
+                <button className="text-primary-red flex items-center gap-2 font-medium group">
                   See More <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
                 </button>
               </div>
 
               {/* Image pair */}
-              <div className="flex flex-row gap-6 w-full items-start justify-center">
+              <div className="flex flex-row gap-4 w-full items-start justify-center">
                 {project.images.map((src, imgIdx) => (
                   <div
                     key={imgIdx}

@@ -651,7 +651,7 @@ const MagicBento = ({
       <BentoCardGrid gridRef={gridRef}>
         <div className="card-responsive grid gap-6">
           {cardData.map((card, index) => {
-            const baseClassName = `card flex flex-col justify-between relative aspect-[5/3] min-h-[180px] w-full max-w-full p-6 rounded-[20px] border border-solid font-light overflow-hidden transition-colors duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
+            const baseClassName = `card  flex flex-col justify-between relative aspect-[5/3] min-h-[180px] w-full max-w-full px-6 pt-4 md:p-6 rounded-[20px] border border-solid font-light overflow-hidden transition-colors duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
               enableBorderGlow ? 'card--border-glow' : ''
             }`;
 
@@ -678,9 +678,9 @@ const MagicBento = ({
                   clickEffect={clickEffect}
                   enableMagnetism={enableMagnetism}
                 >
-                  <div className="card__icon flex justify-start items-start mb-4 relative text-white text-3xl h-20">
+                  <div className="card__icon flex justify-start items-start  mb-2 md:mb-4 relative text-white text-3xl h-20">
                     {card.icon
-                      ? <img src={card.icon} alt={card.title} className="h-20 w-20 object-contain" />
+                      ? <img src={card.icon} alt={card.title} className=" h-15 w-15 md:h-20 md:w-20 object-contain" />
                       : <span className="card__label">{card.label}</span>
                     }
                   </div>

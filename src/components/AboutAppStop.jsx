@@ -31,9 +31,9 @@ const AboutAppStop = () => {
   ];
 
   return (
-    <div className="relative w-full bg-white px-6 md:px-20 lg:px-40 py-40">
+    <div className="relative w-full bg-white px-6 py-20 md:px-20 lg:px-40 ">
       {/* Header Section */}
-      <div className="mb-12 flex justify-between items-center md:gap-10 lg:gap-20 mb-10">
+      <div className="mb-12 flex flex-col items-start md:flex-row justify-between md:items-center md:gap-10 lg:gap-20">
         <p className="text-black/50 text-sm font-semibold mb-4 font-primary">• About App Stop</p>
         <p className="text-black text-2xl md:text-2xl lg:text-3xl leading-relaxed max-w-4xl font-primary">
           Delivering <span className="font-semibold">impactful</span> results on every project, with a sharp focus on both <span className="font-semibold">design excellence</span> and <span className="font-semibold">functional</span> performance.

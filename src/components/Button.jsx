@@ -16,7 +16,7 @@ const Button = ({
     <Component 
       href={href}
       onClick={onClick}
-      className={`relative flex gap-3 items-center px-5 py-3 rounded-[7px] transition-transform hover:scale-105 inline-flex z-0 ${className}`}
+      className={`relative flex gap-2 md:gap-3 items-center px-4 py-2.5 md:px-5 md:py-3 rounded-[7px] transition-transform hover:scale-105 inline-flex z-0 ${className}`}
       style={{ background: 'transparent', border: 'none', textDecoration: 'none', ...style }}
     >
       {/* Animated gradient border background */}
@@ -32,7 +32,7 @@ const Button = ({
           <span className="relative z-10">{icon}</span>
       )}
       
-      <span className="font-medium text-xl text-white tracking-[-0.48px] leading-normal relative z-10 font-primary">
+      <span className="font-medium text-lg md:text-xl text-white tracking-[-0.48px] leading-normal relative z-10 font-primary">
         {children}
       </span>
 

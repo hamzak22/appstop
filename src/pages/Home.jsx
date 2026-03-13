@@ -83,32 +83,31 @@ const sellingPointsData = [
 const Home = () => {
   return (
     <>
-      <div className="bg-[#050505] relative w-full min-h-[112vh] overflow-hidden pb-30">
+      <div className="bg-[#050505] relative w-full min-h-[80vh] lg:min-h-[112vh] flex flex-col justify-end lg:block overflow-hidden pt-40 lg:pt-0 pb-4 lg:pb-30">
         {/* 3D Elements */}
-        <img src={space3d} alt="Space 3d element" className="absolute top-[5%] right-0 w-[400px] z-10 pointer-events-none object-contain animate-float" />
-        <img src={star3d} alt="Star 3d element" className="absolute top-[45%] left-0 w-[300px] z-10 pointer-events-none object-contain animate-float" style={{ animationDelay: '1s' }} />
+        <img src={space3d} alt="Space 3d element" className="absolute top-[2%] lg:top-[5%] -right-16 lg:right-0 w-48 lg:w-[400px] z-10 pointer-events-none object-contain animate-float opacity-60 lg:opacity-100" />
+        <img src={star3d} alt="Star 3d element" className="absolute bottom-20 lg:bottom-auto lg:top-[45%] -left-6 lg:left-0 w-28 lg:w-[300px] z-10 pointer-events-none object-contain animate-float opacity-60 lg:opacity-100" style={{ animationDelay: '1s' }} />
 
-        {/* Background gradient vector */}
-        <div className="absolute h-150 left-41 top-[400px] w-[1930.891px]">
+        {/* Background gradient vector - Mobile */}
+        <div className="lg:hidden absolute left-1/2 -translate-x-1/2 bottom-0 w-[1000px] h-[80%] pointer-events-none z-0">
+          <img alt="" className="w-full h-full object-cover max-w-none opacity-80 mix-blend-screen" src={imgVector} />
+        </div>
+        {/* Background gradient vector - Desktop */}
+        <div className="hidden lg:block absolute h-150 left-41 top-[400px] w-[1930.891px] pointer-events-none z-0">
           <div className="absolute inset-[-56.61%_-16.33%]">
-            <img alt="" className="block max-w-none size-full" src={imgVector} />
+            <img alt="" className="block max-w-none size-full mix-blend-screen" src={imgVector} />
           </div>
         </div>
 
-        {/* Logo (Temporary place, should probably be in Navbar later)
-        <div className="absolute left-1/2 top-30.5 -translate-x-1/2 z-10">
-          <img src={logo} alt="appstop" className="h-auto w-auto" />
-        </div> */}
-
         {/* Main content */}
-        <div className="absolute left-1/2 top-1/2 mt-15 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-12 items-center w-214.5 max-w-[90vw]">
+        <div className="relative lg:absolute lg:top-1/2 lg:left-1/2 lg:mt-15 lg:-translate-x-1/2 lg:-translate-y-1/2 flex flex-col gap-6 lg:gap-12 items-center w-full lg:w-214.5 max-w-[90vw] z-20 mx-auto px-4 lg:px-0">
           {/* Text content */}
-          <div className="flex flex-col gap-12.25 items-center w-full">
-            <p className="font-semibold text-[20px] text-center text-white tracking-normal leading-normal font-primary">
+          <div className="flex flex-col gap-5 lg:gap-12.25 items-center w-full lg:mt-0 mt-8">
+            <p className="font-semibold text-xs lg:text-[20px] text-center text-white tracking-wider lg:tracking-normal leading-normal font-primary uppercase lg:normal-case">
               Leading App Development Agency
             </p>
             
-            <h1 className="font-bold text-[72px] text-center text-white tracking-[-1.44px] leading-tight w-full whitespace-pre-wrap font-primary">
+            <h1 className="font-bold text-[36px] lg:text-[72px] text-center text-white tracking-tight lg:tracking-[-1.44px] leading-[1.1] lg:leading-tight w-full whitespace-pre-wrap font-primary">
               <span>We </span>
               <span className="font-semibold italic font-playfair">Develop</span>
               <span> Apps That Drive </span>
@@ -116,33 +115,50 @@ const Home = () => {
             </h1>
 
             {/* Pill badge */}
-            <div className="bg-white/5 border border-red-400 rounded-full px-32 py-2">
-              <p className="font-semibold text-base text-center text-white tracking-normal leading-normal font-primary">
+            <div className="bg-white/5 border border-red-400 rounded-full px-6 lg:px-32 py-2 flex items-center justify-center">
+              <p className="font-semibold text-[11px] lg:text-base text-center text-white tracking-normal leading-normal font-primary m-0">
                 Developing Apps Across 8+ Countries
               </p>
             </div>
           </div>
 
           {/* CTA Button */}
-          <Button 
-            href="#contact"
-            icon={<img alt="" className="size-6 relative z-10" src={imgMaterialSymbolsCall} />}
-          >
-            Book a Call
-          </Button>
+          <div className="mt-2 lg:mt-0">
+            <Button 
+              href="#contact"
+              icon={<img alt="" className="size-4 lg:size-6 relative z-10" src={imgMaterialSymbolsCall} />}
+            >
+              Book a Call
+            </Button>
+          </div>
 
-          <div className="w-screen pt-6 flex justify-center mb-40">
-            <LogoLoop
-              logos={techLogos}
-              width="60%"
-              logoHeight={40}
-              gap={50}
-              speed={60}
-              fadeOut
-              fadeOutColor="transparent"
-              style={{ '--logoloop-fadeSize': 'clamp(40px,18%,220px)' }}
-              ariaLabel="Tech stack logos"
-            />
+          <div className="w-screen pt-10 lg:pt-6 flex justify-center pb-2 lg:pb-0 lg:mb-40">
+            <div className="w-full lg:w-[60%] lg:hidden">
+              <LogoLoop
+                logos={techLogos}
+                width="100%"
+                logoHeight={30}
+                gap={30}
+                speed={60}
+                fadeOut
+                fadeOutColor="transparent"
+                style={{ '--logoloop-fadeSize': 'clamp(40px,18%,220px)' }}
+                ariaLabel="Tech stack logos"
+              />
+            </div>
+            <div className="w-full lg:w-[60%] hidden lg:block">
+              <LogoLoop
+                logos={techLogos}
+                width="100%"
+                logoHeight={40}
+                gap={50}
+                speed={60}
+                fadeOut
+                fadeOutColor="transparent"
+                style={{ '--logoloop-fadeSize': 'clamp(40px,18%,220px)' }}
+                ariaLabel="Tech stack logos"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -185,8 +201,8 @@ const Home = () => {
 
       {/* Magic Bento Section */}
       <div className='relative w-full bg-black px-6 md:px-20 lg:px-40 py-20 mt-0 rounded-t-[50px]'>
-        <img src={rocket2} alt="Space 3d element" className="absolute top-[5%] right-0 w-[400px] z-10 pointer-events-none object-contain animate-float" />
-        <img src={rocket1} alt="Star 3d element" className="absolute top-[45%] left-0 w-[300px] z-10 pointer-events-none object-contain animate-float" style={{ animationDelay: '1s' }} />
+        <img src={rocket2} alt="Space 3d element" className="absolute  top-[13%] md:top-[5%] right-0 w-[130px] md:w-[400px] z-10 pointer-events-none object-contain animate-float" />
+        <img src={rocket1} alt="Star 3d element" className="absolute top-[90%] md:top-[45%] left-0 w-[120px] md:w-[300px] z-10 pointer-events-none object-contain animate-float" style={{ animationDelay: '1s' }} />
         <div className='flex flex-col items-center mb-12'>
           <h2 className='text-center text-4xl md:text-5xl font-bold text-white font-primary leading-tight'>
             We Develop for the Future to
