@@ -1,3 +1,4 @@
+"use client"
 import { useRef, useEffect, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
 import infinity from '../../public/images/bento-icons/infinity.png';

@@ -1,4 +1,4 @@
-import React from 'react';
+"use client"
 import { FiArrowRight } from 'react-icons/fi';
 
 const Button = ({ 

@@ -1,6 +1,7 @@
-import React from 'react';
+"use client"
 import Button from './Button.jsx';
-import space3d from '../../public/images/div-bg.png';
+
+const space3d = '/images/div-bg.png';
 
 const AboutAppStop = () => {
   const stats = [

@@ -1,8 +1,9 @@
+"use client"
 import React, { useState } from 'react';
-import FlowingMenu from '../reactbits/FlowingMenu/FlowingMenu.jsx';
-import ContactForm from '../reactbits/ContactForm.jsx';
+import FlowingMenu from '../../reactbits/FlowingMenu/FlowingMenu.jsx';
+import ContactForm from '../../reactbits/ContactForm.jsx';
 
-import imgVector from '../../public/images/bg-gradient.png';
+const imgVector = '/images/bg-gradient.png';
 
 const industries = [
   'Explore All',

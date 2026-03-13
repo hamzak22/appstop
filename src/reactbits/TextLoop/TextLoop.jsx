@@ -1,3 +1,4 @@
+"use client"
 import { useEffect, useRef, useState, memo, useCallback, useMemo } from 'react';
 
 const TextLoop = memo(({

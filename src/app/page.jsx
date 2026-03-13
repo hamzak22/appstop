@@ -1,5 +1,4 @@
-import React from 'react';
-import '../App.css';
+"use client";
 import LogoLoop from '../reactbits/LogoLoop/LogoLoop.jsx';
 import MagicBento from '../reactbits/MagicBento.jsx';
 import ClientReviews from '../reactbits/ClientReviews.jsx';
@@ -17,17 +16,18 @@ import {
 } from 'react-icons/si';
 import PortfolioSection from '../reactbits/PortfolioScroll.jsx';
 import AboutAppStop from '../components/AboutAppStop.jsx';
-import  imgMaterialSymbolsCall  from '../../public/images/call_icon.png';
-import imgVector from '../../public/images/bg-gradient.png';
-import space3d from '../../public/images/space-3d.png';
-import star3d from '../../public/images/star-3d.png';
-import rocket1 from '../../public/images/rocket1.png';
-import rocket2 from '../../public/images/rocket2.png';
-import iconInfinity from '../../public/images/bento-icons/infinity.png';
-import iconLifetime from '../../public/images/bento-icons/lifetime.png';
-import iconDollar from '../../public/images/bento-icons/dollar.png';
-import iconClock from '../../public/images/bento-icons/clock.png';
-import iconStar from '../../public/images/bento-icons/star.png';
+
+const imgMaterialSymbolsCall  = '/images/call_icon.png';
+const imgVector = '/images/bg-gradient.png';
+const space3d = '/images/space-3d.png';
+const star3d = '/images/star-3d.png';
+const rocket1 = '/images/rocket1.png';
+const rocket2 = '/images/rocket2.png';
+const iconInfinity = '/images/bento-icons/infinity.png';
+const iconLifetime = '/images/bento-icons/lifetime.png';
+const iconDollar = '/images/bento-icons/dollar.png';
+const iconClock = '/images/bento-icons/clock.png';
+const iconStar = '/images/bento-icons/star.png';
 
 
 // Figma design assets

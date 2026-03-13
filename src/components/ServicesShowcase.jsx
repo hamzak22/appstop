@@ -1,5 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+"use client"
+
+import Link from 'next/link';
 
 const services = [
   {
@@ -185,7 +186,7 @@ const DesktopCanvas = () => (
         const isDark = service.id === '01' || service.id === '03';
         return (
           <Link
-            to={service.slug}
+            href={service.slug}
             key={service.id}
             className="absolute block overflow-visible px-10 py-9 transition-[scale,box-shadow] duration-300 ease-out hover:scale-[1.015] hover:shadow-[0_32px_72px_rgba(18,18,18,0.16)]"
             style={{ borderRadius: '34px', ...service.desktopCardStyle }}
@@ -224,7 +225,7 @@ const MobileStack = () => (
           )}
 
           <Link
-            to={service.slug}
+            href={service.slug}
             className={`relative block overflow-hidden px-6 py-7 sm:px-8 sm:py-8 transition-[scale,box-shadow] duration-300 ease-out hover:scale-[1.015] hover:shadow-[0_32px_72px_rgba(18,18,18,0.16)] ${service.mobileCardOffset ?? ''}`}
             style={{ borderRadius: '30px', ...service.desktopCardStyle }}
           >

@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 import { FaCheck, FaWhatsapp, FaArrowRight } from 'react-icons/fa6';
 

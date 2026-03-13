@@ -1,6 +1,7 @@
+"use client"
 import React from 'react';
-import ContactForm from '../reactbits/ContactForm.jsx';
-import Button from '../components/Button.jsx';
+import ContactForm from '../../reactbits/ContactForm.jsx';
+import Button from '../../components/Button.jsx';
 import { FiArrowRight } from 'react-icons/fi';
 import { 
   FaRegLightbulb, 
@@ -11,7 +12,7 @@ import {
   FaRegClipboard 
 } from 'react-icons/fa';
 
-import imgVector from '../../public/images/bg-gradient.png';
+const imgVector = '/images/bg-gradient.png';
 
 const servicesData = [
   {

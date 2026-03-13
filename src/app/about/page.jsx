@@ -1,12 +1,13 @@
+"use client"
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiArrowRight } from 'react-icons/fi';
 import { FaCheckCircle, FaUsers, FaProjectDiagram, FaTrophy, FaHandshake, FaBullseye, FaHeart } from 'react-icons/fa';
-import Button from '../components/Button.jsx';
-import ContactForm from '../reactbits/ContactForm.jsx';
-import ClientReviews from '../reactbits/ClientReviews.jsx';
+import Button from '../../components/Button.jsx';
+import ContactForm from '../../reactbits/ContactForm.jsx';
+import ClientReviews from '../../reactbits/ClientReviews.jsx';
 
-import imgVector from '../../public/images/bg-gradient.png';
+const imgVector = '/images/bg-gradient.png';
 
 const stats = [
   { id: 1, number: '150+', label: 'Projects Completed', icon: <FaProjectDiagram className="w-6 h-6" /> },

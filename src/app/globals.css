@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+
+
 html {
   overflow-x: clip;
 }
@@ -16,31 +18,40 @@ body {
 
 @font-face {
   font-family: 'Hikasami';
-  src: url(./assets/fonts/Hikasami-Regular.ttf);
+  src: url(/fonts/Hikasami-Regular.ttf);
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Hikasami';
-  src: url(./assets/fonts/Hikasami-Medium.ttf);
+  src: url(/fonts/Hikasami-Medium.ttf);
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Hikasami';
-  src: url(./assets/fonts/Hikasami-SemiBold.ttf);
+  src: url(/fonts/Hikasami-SemiBold.ttf);
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Hikasami';
-  src: url(./assets/fonts/Hikasami-Bold.ttf);
+  src: url(/fonts/Hikasami-Bold.ttf);
   font-weight: 700;
   font-style: normal;
 }
+
+@theme {
+  --font-sans: 'Hikasami', system-ui, -apple-system, sans-serif;
+  --font-primary: 'Hikasami', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+
+  --color-primary-red : #D52020;
+}
+
 
 @keyframes float {
   0%, 100% {
@@ -55,13 +66,6 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
-@theme {
-  --font-sans: 'Hikasami', system-ui, -apple-system, sans-serif;
-  --font-primary: 'Hikasami', sans-serif;
-  --font-playfair: 'Playfair Display', serif;
-
-  --color-primary-red : #D52020;
-}
 
 @keyframes shine {
   0% {

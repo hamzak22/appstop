@@ -1,14 +1,13 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+"use client"
+import { usePathname } from 'next/navigation';
 import PillNav from '../reactbits/Nav';
-import logo from '../assets/logo.svg';
 
 const Navbar = () => {
-  const location = useLocation();
+  const pathname = usePathname();
 
   return (
     <PillNav
-      logo={logo}
+      logo="/images/call_icon.png"
       logoAlt="Appstop Logo"
       items={[
         { label: 'Home', href: '/' },
@@ -16,7 +15,7 @@ const Navbar = () => {
         { label: 'Projects', href: '/projects' },
         { label: 'Services', href: '/services' }
       ]}
-      activeHref={location.pathname}
+      activeHref={pathname}
       className="custom-nav mt-4"
       ease="power2.easeOut"
       baseColor="#ffffff"
