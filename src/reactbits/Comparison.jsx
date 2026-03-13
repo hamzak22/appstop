@@ -1,6 +1,5 @@
 "use client"
 import React from 'react';
-import './Comparison.css';
 
 const Comparison = () => {
   const appStopPoints = [

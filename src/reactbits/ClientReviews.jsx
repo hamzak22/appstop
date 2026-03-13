@@ -1,6 +1,5 @@
 "use client"
 import React, { useRef, useEffect, useState } from 'react';
-import './ClientReviews.css';
 
 const ClientReviews = () => {
   const reviewsData = [
