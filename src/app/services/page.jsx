@@ -1,8 +1,9 @@
 "use client"
-import React from 'react';
+import Link from 'next/link';
 import ContactForm from '../../reactbits/ContactForm.jsx';
 import Button from '../../components/Button.jsx';
 import { FiArrowRight } from 'react-icons/fi';
+import { getServicePath, servicesData } from '@/data/Services.js';
 import { 
   FaRegLightbulb, 
   FaChessKnight, 
@@ -13,49 +14,6 @@ import {
 } from 'react-icons/fa';
 
 const imgVector = '/images/bg-gradient.png';
-
-const servicesData = [
-  {
-    id: 1,
-    title: 'UI UX Design',
-    description: 'When it comes to UI/UX design, we create experiences that are simple to navigate. Our goal is to deliver user-friendly interactions that align with your brand and fulfill user needs.',
-    bannerImage: 'https://res.cloudinary.com/dls57pxvo/image/upload/v1773177638/UIUX_cywdsd.jpg',
-    features: [
-      'UI/UX Design',
-      'Visual UI Design',
-      'User Research',
-      'Usability Testing',
-      'Wireframe & Prototyping',
-      'Interaction Design',
-    ],
-    tools: [
-      'https://cdn.worldvectorlogo.com/logos/figma-1.svg',
-      'https://cdn.worldvectorlogo.com/logos/adobe-xd-2.svg',
-      'https://cdn.worldvectorlogo.com/logos/sketch-2.svg',
-      'https://cdn.worldvectorlogo.com/logos/framer-1.svg',
-    ]
-  },
-  {
-    id: 2,
-    title: 'Mobile App Development',
-    description: 'We build responsive, fast, and scalable web applications tailored to your business goals. From landing pages to complex corporate platforms.',
-    bannerImage: 'https://res.cloudinary.com/dls57pxvo/image/upload/v1773177709/service_header_rnrlv1.jpg',
-    features: [
-      'Frontend Development',
-      'Backend Development',
-      'E-commerce Solutions',
-      'CMS Integration',
-      'Web Performance',
-      'API Development',
-    ],
-    tools: [
-      'https://cdn.worldvectorlogo.com/logos/react-2.svg',
-      'https://cdn.worldvectorlogo.com/logos/next-js.svg',
-      'https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg',
-      'https://cdn.worldvectorlogo.com/logos/tailwindcss.svg',
-    ]
-  },
-];
 
 const whyChooseUsData = [
   {
@@ -100,7 +58,7 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-[#F4F4F5] font-primary">
       {/* Header Section */}
-      <div className="bg-[#050505] relative w-full h-[60vh] min-h-[500px] overflow-hidden flex flex-col justify-center items-center">
+      <div className="bg-[#050505] relative w-full h-[60vh] min-h-125 overflow-hidden flex flex-col justify-center items-center">
         {/* Background gradient vector */}
         <div className="absolute h-150 left-41 top-[70%] w-[1930.891px] -translate-y-1/2">
           <div className="absolute inset-[-56.61%_-16.33%]">
@@ -127,25 +85,31 @@ const Services = () => {
       {/* Services Content Section */}
       <div className="w-full py-20 px-6 md:px-12 lg:px-20 relative z-20 rounded-t-[50px] -mt-10 bg-[#F4F4F5] flex flex-col items-center gap-16">
         
-        {servicesData.map((service, index) => (
-          <div 
-            key={service.id} 
-            className="w-full max-w-6xl bg-white rounded-[32px] overflow-hidden shadow-sm border border-gray-100 flex flex-col"
+        {servicesData.map((service) => (
+          <Link
+            href={getServicePath(service.slug)}
+            key={service.slug}
+            className="w-full max-w-6xl bg-white rounded-4xl overflow-hidden shadow-sm border border-gray-100 flex flex-col transition-transform duration-300 hover:-translate-y-1"
           >
             {/* Top Banner Area */}
-            <div className="w-full h-[240px] md:h-[320px] lg:h-[400px] overflow-hidden bg-gray-100">
+            <div className="w-full h-60 md:h-80 lg:h-100 overflow-hidden bg-gray-100">
               <img 
                 src={service.bannerImage} 
-                alt={`${service.title} banner`} 
+                alt={service.bannerAlt ?? `${service.title} banner`} 
                 className="w-full h-full object-cover"
               />
             </div>
 
             {/* Content Area */}
             <div className="p-8 md:p-12 lg:p-16 flex flex-col">
-              <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-gray-900 mb-4 tracking-tight">
-                {service.title}
-              </h2>
+              <div className="mb-4 flex items-center justify-between gap-4">
+                <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-gray-900 tracking-tight">
+                  {service.title}
+                </h2>
+                <span className="hidden md:inline-flex items-center gap-2 text-sm font-semibold text-primary-red">
+                  View Service <FiArrowRight className="w-4 h-4" />
+                </span>
+              </div>
               
               <p className="text-gray-600 text-base md:text-lg mb-10 max-w-3xl leading-relaxed">
                 {service.description}
@@ -156,7 +120,7 @@ const Services = () => {
                 {service.features.map((feature, idx) => (
                   <div 
                     key={idx} 
-                    className="flex justify-between items-center py-3 border-b border-gray-200 group cursor-pointer transition-colors"
+                    className="flex justify-between items-center py-3 border-b border-gray-200 group transition-colors"
                   >
                     <span className="text-gray-900 font-medium text-[16px] md:text-[18px]">
                       {feature}
@@ -181,7 +145,7 @@ const Services = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </Link>
         ))}
         
       </div>
@@ -205,17 +169,17 @@ const Services = () => {
           {whyChooseUsData.map((item) => (
             <div 
               key={item.id}
-              className="rounded-[2rem] p-[1px] transition-all duration-200 ease-in overflow-hidden"
+              className="rounded-4xl p-px transition-all duration-200 ease-in overflow-hidden"
               style={{
                 backgroundImage: 'linear-gradient(333deg, #c4c4c400 55%, #ececec33 70%, #dc2626)',
                 boxShadow: '0 16px 24px rgba(220, 38, 38, 0.1)'
               }}
             >
               <div 
-                className="bg-[#0f0f0f] bg-[linear-gradient(347deg,rgba(220,38,38,0.2),rgba(10,10,10,0.4))] w-full h-full p-8 md:p-10 rounded-[2rem] shadow-[inset_0px_8px_10px_rgba(255,255,255,0.09)] flex flex-col gap-6 relative overflow-hidden group hover:border-primary-red/70 transition-all duration-300 border border-transparent"
+                className="bg-[#0f0f0f] bg-[linear-gradient(347deg,rgba(220,38,38,0.2),rgba(10,10,10,0.4))] w-full h-full p-8 md:p-10 rounded-4xl shadow-[inset_0px_8px_10px_rgba(255,255,255,0.09)] flex flex-col gap-6 relative overflow-hidden group hover:border-primary-red/70 transition-all duration-300 border border-transparent"
               >
                 {/* Subtle Red glow on hover */}
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary-red/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div className="absolute top-0 left-0 w-full h-full bg-linear-to-br from-primary-red/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
                 <div className="relative z-10 w-12 h-12 flex items-center justify-center">
                   {item.icon}

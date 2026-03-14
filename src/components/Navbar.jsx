@@ -4,6 +4,7 @@ import PillNav from '../reactbits/Nav';
 
 const Navbar = () => {
   const pathname = usePathname();
+  const activeHref = pathname.startsWith('/services/') ? '/services' : pathname;
 
   return (
     <PillNav
@@ -15,7 +16,7 @@ const Navbar = () => {
         { label: 'Projects', href: '/projects' },
         { label: 'Services', href: '/services' }
       ]}
-      activeHref={pathname}
+      activeHref={activeHref}
       className="custom-nav mt-4"
       ease="power2.easeOut"
       baseColor="#ffffff"

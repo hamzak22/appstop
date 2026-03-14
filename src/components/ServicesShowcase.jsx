@@ -1,109 +1,7 @@
 "use client"
 
 import Link from 'next/link';
-
-const services = [
-  {
-    id: '01',
-    slug: '/services/mobile-app-development',
-    title: 'Mobile App Development',
-    description:
-      'We build native and cross-platform mobile apps engineered for performance, scalability, and seamless user experiences — from first prototype to global launch.',
-    points: [
-      'iOS & Android development',
-      'Cross-platform (React Native & Flutter)',
-      'API integration & backend architecture',
-      'App Store optimization & deployment',
-      'Post-launch support & iteration'
-    ],
-    image: 'https://res.cloudinary.com/dls57pxvo/image/upload/v1773177092/vita_vji4yh.jpg',
-    imageAlt: 'Mobile app development project preview',
-    desktopCardStyle: {
-      top: '0px',
-      left: '16px',
-      width: '72%',
-      background: '#ff4355',
-      color: '#ffffff',
-      border: '1px solid rgba(255,255,255,0.55)',
-      boxShadow: '0 22px 55px rgba(18, 18, 18, 0.08)',
-      transform: 'rotate(-1.4deg)'
-    },
-    // Absolute position relative to the canvas wrapper — rendered OUTSIDE card
-    desktopFloatStyle: {
-      position: 'absolute',
-      top: '18px',
-      right: '20px',
-      width: 'clamp(210px, 21vw, 262px)',
-      transform: 'rotate(-11deg)',
-    },
-    mobileCardOffset: 'md:mr-16',
-    // Mobile: floated image appears AFTER the card, pushed to the right
-    mobileFloat: { align: 'justify-end', imgClass: '-rotate-6 mr-5', before: false }
-  },
-  {
-    id: '02',
-    slug: '/services/ui-ux-design',
-    title: 'UI/UX Design',
-    description:
-      'We craft intuitive, research-driven interfaces that turn complex workflows into effortless interactions — so every tap, swipe, and scroll feels intentional.',
-    points: [
-      'User research & persona mapping',
-      'Wireframing & interactive prototyping',
-      'Visual UI design & design systems',
-      'Usability testing & validation',
-      'Responsive & adaptive layouts'
-    ],
-    desktopCardStyle: {
-      top: '340px',
-      left: '195px',
-      width: '64%',
-      background: '#f8f8f6',
-      color: '#2f2f2f',
-      border: '1px solid rgba(41,41,41,0.22)',
-      boxShadow: '0 22px 55px rgba(18, 18, 18, 0.08)',
-      transform: 'rotate(0.8deg)'
-    },
-    mobileCardOffset: 'md:ml-16 md:-mt-8',
-    accentGlow: 'rgba(255, 138, 153, 0.28)'
-  },
-  {
-    id: '03',
-    slug: '/services/ux-consultation',
-    title: 'UX Consultation',
-    description:
-      'We audit existing products, identify friction points, and deliver actionable strategies that measurably improve retention, engagement, and conversion.',
-    points: [
-      'UX audits & heuristic reviews',
-      'Information architecture optimization',
-      'Conversion-focused recommendations',
-      'Accessibility & compliance guidance',
-      'Stakeholder workshops & road-mapping'
-    ],
-    image: 'https://res.cloudinary.com/dls57pxvo/image/upload/v1773177092/nfl_q8r4qp.jpg',
-    imageAlt: 'UX consultation project preview',
-    desktopCardStyle: {
-      top: '690px',
-      left: '330px',
-      width: '66%',
-      background: '#ff4355',
-      color: '#ffffff',
-      border: '1px solid rgba(255,255,255,0.12)',
-      boxShadow: '0 28px 70px rgba(255, 67, 85, 0.28)',
-      transform: 'rotate(-1deg)'
-    },
-    // Absolute position relative to the canvas wrapper — rendered OUTSIDE card, left side
-    desktopFloatStyle: {
-      position: 'absolute',
-      top: '688px',
-      left: '16px',
-      width: 'clamp(192px, 20vw, 248px)',
-      transform: 'rotate(8deg)',
-    },
-    mobileCardOffset: 'md:ml-28 md:-mt-8',
-    // Mobile: floated image appears BEFORE the card, pushed to the left
-    mobileFloat: { align: 'justify-start', imgClass: 'rotate-6 ml-5', before: true }
-  }
-];
+import { getServicePath, servicesData } from '@/data/Services.js';
 
 const textStyles = {
   light: {
@@ -153,12 +51,12 @@ const ServiceCardContent = ({ service, dark }) => {
         </h3>
 
         <p className={`mt-7 max-w-[24rem] text-base leading-8 font-primary ${palette.description}`}>
-          {service.description}
+          {service.homeDescription ?? service.description}
         </p>
       </div>
 
       <ul className={`space-y-1 text-sm leading-7 font-primary sm:text-[15px] ${palette.list}`}>
-        {service.points.map(point => (
+        {service.homePoints.map(point => (
           <li key={point}>{point}</li>
         ))}
       </ul>
@@ -170,31 +68,31 @@ const DesktopCanvas = () => (
   <div className="hidden xl:block">
     <div className="relative mx-auto mt-16 w-full" style={{ maxWidth: '1180px', minHeight: '1060px' }}>
       {/* Float images first → cards render on top in natural DOM stacking order */}
-      {services.map(service =>
-        service.image ? (
+      {servicesData.map((service) =>
+        service.homeFloatImage ? (
           <DesktopFloat
             key={`float-${service.id}`}
-            src={service.image}
-            alt={service.imageAlt}
-            style={service.desktopFloatStyle}
+            src={service.homeFloatImage.src}
+            alt={service.homeFloatImage.alt}
+            style={service.homeFloatImage.desktopStyle}
           />
         ) : null
       )}
 
       {/* Cards — no images inside */}
-      {services.map(service => {
-        const isDark = service.id === '01' || service.id === '03';
+      {servicesData.map((service) => {
+        const isDark = service.homeTheme === 'dark';
         return (
           <Link
-            href={service.slug}
+            href={getServicePath(service.slug)}
             key={service.id}
             className="absolute block overflow-visible px-10 py-9 transition-[scale,box-shadow] duration-300 ease-out hover:scale-[1.015] hover:shadow-[0_32px_72px_rgba(18,18,18,0.16)]"
-            style={{ borderRadius: '34px', ...service.desktopCardStyle }}
+            style={{ borderRadius: '34px', ...service.homeCardStyle }}
           >
-            {service.accentGlow && (
+            {service.homeAccentGlow && (
               <div
                 className="pointer-events-none absolute bottom-0 right-10 h-28 w-44 rounded-full blur-3xl"
-                style={{ backgroundColor: service.accentGlow }}
+                style={{ backgroundColor: service.homeAccentGlow }}
                 aria-hidden="true"
               />
             )}
@@ -208,31 +106,31 @@ const DesktopCanvas = () => (
 
 const MobileStack = () => (
   <div className="mx-auto mt-12 flex max-w-5xl flex-col gap-12 xl:hidden">
-    {services.map(service => {
-      const isDark = service.id === '01' || service.id === '03';
-      const { mobileFloat } = service;
+    {servicesData.map((service) => {
+      const isDark = service.homeTheme === 'dark';
+      const mobileFloat = service.homeFloatImage?.mobile;
 
       return (
         <div key={service.id} className="flex flex-col">
           {/* Image BEFORE card */}
-          {mobileFloat?.before && service.image && (
+          {mobileFloat?.before && service.homeFloatImage && (
             <MobileFloat
-              src={service.image}
-              alt={service.imageAlt}
+              src={service.homeFloatImage.src}
+              alt={service.homeFloatImage.alt}
               alignClass={mobileFloat.align}
               imgClass={mobileFloat.imgClass}
             />
           )}
 
           <Link
-            href={service.slug}
+            href={getServicePath(service.slug)}
             className={`relative block overflow-hidden px-6 py-7 sm:px-8 sm:py-8 transition-[scale,box-shadow] duration-300 ease-out hover:scale-[1.015] hover:shadow-[0_32px_72px_rgba(18,18,18,0.16)] ${service.mobileCardOffset ?? ''}`}
-            style={{ borderRadius: '30px', ...service.desktopCardStyle }}
+            style={{ borderRadius: '30px', ...service.homeCardStyle }}
           >
-            {service.accentGlow && (
+            {service.homeAccentGlow && (
               <div
                 className="pointer-events-none absolute bottom-0 right-6 h-28 w-40 rounded-full blur-3xl"
-                style={{ backgroundColor: service.accentGlow }}
+                style={{ backgroundColor: service.homeAccentGlow }}
                 aria-hidden="true"
               />
             )}
@@ -240,10 +138,10 @@ const MobileStack = () => (
           </Link>
 
           {/* Image AFTER card */}
-          {!mobileFloat?.before && mobileFloat && service.image && (
+          {!mobileFloat?.before && mobileFloat && service.homeFloatImage && (
             <MobileFloat
-              src={service.image}
-              alt={service.imageAlt}
+              src={service.homeFloatImage.src}
+              alt={service.homeFloatImage.alt}
               alignClass={mobileFloat.align}
               imgClass={mobileFloat.imgClass}
             />
